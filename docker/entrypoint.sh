@@ -22,7 +22,7 @@ echo "[2/4] >>> Importing datas into database..."
 echo "[2/4] <<< Importation done"
 
 echo "[3/4] >>> Creating super user..."
-echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('$DJANGO_ADMIN_EMAIL', '$DJANGO_ADMIN_PASSWORD')" | python3 manage.py shell &>/dev/null
+echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('$DJANGO_ADMIN', '$DJANGO_ADMIN_PASSWORD')" | python3 manage.py shell &>/dev/null
 echo "[3/4] <<< Super User created"
 
 echo "[4/4] >>> Starting server in development..."

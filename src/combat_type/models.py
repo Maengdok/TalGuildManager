@@ -1,7 +1,6 @@
 from django.db import models
 
-# Create your models here.
-class Grade(models.Model):
+class CombatType(models.Model):
     label = models.CharField(max_length=255, null=False)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
@@ -9,8 +8,8 @@ class Grade(models.Model):
 
 class Meta:
     """Define the name of the table"""
-    db_table = 'grade'
-    verbose_name_plural = 'grades'
+    db_table = 'combat_type'
+    verbose_name_plural = 'combat_types'
 
 def __str__(self):
     status = "Inactive"

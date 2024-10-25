@@ -47,8 +47,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'src.blacklist',
+    'src.boss',
+    'src.combat_type',
+    'src.contribution',
+    'src.distribution',
+    'src.grade',
+    'src.loot',
+    'src.loot_type',
     'src.member',
-    'src.grade'
+    'src.member_distribution',
+    'src.roadster',
+    'src.roadster_member',
+    'src.weapon'
 ]
 
 MIDDLEWARE = [
