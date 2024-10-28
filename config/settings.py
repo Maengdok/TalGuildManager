@@ -48,19 +48,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'src.blacklist',
-    'src.boss',
-    'src.combat_type',
-    'src.contribution',
-    'src.distribution',
-    'src.grade',
-    'src.loot',
-    'src.loot_type',
-    'src.member',
-    'src.member_distribution',
-    'src.roadster',
-    'src.roadster_member',
-    'src.weapon'
+    'src.apps.blacklist',
+    'src.apps.boss',
+    'src.apps.combat_type',
+    'src.apps.contribution',
+    'src.apps.distribution',
+    'src.apps.grade',
+    'src.apps.loot',
+    'src.apps.loot_type',
+    'src.apps.member',
+    'src.apps.member_distribution',
+    'src.apps.roadster',
+    'src.apps.roadster_member',
+    'src.apps.weapon'
 ]
 
 MIDDLEWARE = [
@@ -71,6 +71,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'src.middlewares.exception_handler.ExceptionHandler'
 ]
 
 ROOT_URLCONF = 'config.urls'
