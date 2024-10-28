@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('member/', include('src.apps.member.urls'), name="member_"),
     path('grade/', include('src.apps.grade.urls'), name="grade_"),
-    path('weapon/', include('src.apps.weapon.urls'), name="weapon_")
+    path('weapon/', include('src.apps.weapon.urls'), name="weapon_"),
+    path('boss/', include('src.apps.boss.urls'), name="boss_")
 ]
