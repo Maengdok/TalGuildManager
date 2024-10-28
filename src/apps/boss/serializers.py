@@ -1,7 +1,7 @@
-def list_serializer(bosss):
+def list_serializer(bosses):
     result = []
 
-    for boss in bosss:
+    for boss in bosses:
         item = {
             'id': boss['id'],
             'label': boss['label'],

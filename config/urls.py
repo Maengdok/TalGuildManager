@@ -22,5 +22,6 @@ urlpatterns = [
     path('member/', include('src.apps.member.urls'), name="member_"),
     path('grade/', include('src.apps.grade.urls'), name="grade_"),
     path('weapon/', include('src.apps.weapon.urls'), name="weapon_"),
-    path('boss/', include('src.apps.boss.urls'), name="boss_")
+    path('boss/', include('src.apps.boss.urls'), name="boss_"),
+    path('combat_type/', include('src.apps.combat_type.urls'), name="combat_type_")
 ]
