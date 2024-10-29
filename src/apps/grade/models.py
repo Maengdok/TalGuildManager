@@ -7,14 +7,14 @@ class Grade(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     is_activate = models.BooleanField(default=True, null=True, blank=True)
 
-class Meta:
-    """Define the name of the table"""
-    db_table = 'grade'
-    verbose_name_plural = 'grades'
+    class Meta:
+        """Define the name of the table"""
+        db_table = 'grade'
+        verbose_name_plural = 'grades'
 
-def __str__(self):
-    status = "Inactive"
-    if self.is_active:
-        status = "Active"
+    def __str__(self):
+        status = "Inactive"
+        if self.is_activate:
+            status = "Active"
 
-    return f"{self.id} {self.label} ({status})"
+        return f"{self.id} {self.label} ({status})"

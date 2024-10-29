@@ -8,14 +8,14 @@ class Loot(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     is_activate = models.BooleanField(default=True, null=True, blank=True)
 
-class Meta:
-    """Define the name of the table"""
-    db_table = 'loot'
-    verbose_name_plural = 'loots'
+    class Meta:
+        """Define the name of the table"""
+        db_table = 'loot'
+        verbose_name_plural = 'loots'
 
-def __str__(self):
-    status = "Inactive"
-    if self.is_active:
-        status = "Active"
+    def __str__(self):
+        status = "Inactive"
+        if self.is_activate:
+            status = "Active"
 
-    return f"{self.id} [{self.boss.label}] {self.label} ({status})"
+        return f"{self.id} [{self.boss.label}] {self.label} ({status})"

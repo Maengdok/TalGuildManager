@@ -8,14 +8,14 @@ class Blacklist(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     is_activate = models.BooleanField(default=True, null=True, blank=True)
 
-class Meta:
-    """Define the name of the table"""
-    db_table = 'blacklist'
-    verbose_name_plural = 'blacklists'
+    class Meta:
+        """Define the name of the table"""
+        db_table = 'blacklist'
+        verbose_name_plural = 'blacklists'
 
-def __str__(self):
-    status = "Inactive"
-    if self.is_active:
-        status = "Active"
+    def __str__(self):
+        status = "Inactive"
+        if self.is_activate:
+            status = "Active"
 
-    return f"{self.id} [{self.previous_guild}] {self.username} ({status})"
+        return f"{self.id} [{self.previous_guild}] {self.username} ({status})"

@@ -7,14 +7,14 @@ class Weapon(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     is_activate = models.BooleanField(default=True, null=True, blank=True)
 
-class Meta:
-    """Define the name of the table"""
-    db_table = 'weapon'
-    verbose_name_plural = 'weapons'
+    class Meta:
+        """Define the name of the table"""
+        db_table = 'weapon'
+        verbose_name_plural = 'weapons'
 
-def __str__(self):
-    status = "Inactive"
-    if self.is_active:
-        status = "Active"
+    def __str__(self):
+        status = "Inactive"
+        if self.is_activate:
+            status = "Active"
 
-    return f"{self.label} ({status})"
+        return f'{self.id} {self.label} ({status})'

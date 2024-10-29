@@ -16,14 +16,14 @@ class MemberDistribution(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     is_activate = models.BooleanField(null=True, blank=True, default=True)
 
-class Meta:
-    """Define the name of the table"""
-    db_table = 'member_distribution'
-    verbose_name_plural = 'member_distributions'
+    class Meta:
+        """Define the name of the table"""
+        db_table = 'member_distribution'
+        verbose_name_plural = 'member_distributions'
 
-def __str__(self):
-    status = "Inactive"
-    if self.is_active:
-        status = "Active"
+    def __str__(self):
+        status = "Inactive"
+        if self.is_activate:
+            status = "Active"
 
-    return f"{self.id} [{self.distribution.loot.label}] {self.member.username} ({status})"
+        return f"{self.id} [{self.distribution.loot.label}] {self.member.username} ({status})"

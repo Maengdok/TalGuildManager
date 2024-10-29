@@ -7,17 +7,17 @@ class BiS(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     is_activate = models.BooleanField(default=True, null=True, blank=True)
 
-class Meta:
-    """Define the name of the table"""
-    db_table = 'best_in_slot'
-    verbose_name_plural = 'best_in_slots'
+    class Meta:
+        """Define the name of the table"""
+        db_table = 'best_in_slot'
+        verbose_name_plural = 'best_in_slots'
 
-def __str__(self):
-    status = "Inactive"
-    primary = "Primary"
-    if self.is_active:
-        status = "Active"
-    if not self.is_primary:
-        primary = "Secondary"
+    def __str__(self):
+        status = "Inactive"
+        primary = "Primary"
+        if self.is_activate:
+            status = "Active"
+        if not self.is_primary:
+            primary = "Secondary"
 
-    return f"{self.id} [{primary}] {self.member.username} ({status})"
+        return f"{self.id} [{primary}] {self.member.username} ({status})"
