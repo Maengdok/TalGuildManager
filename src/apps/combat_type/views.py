@@ -61,12 +61,12 @@ def update(request) -> JsonResponse:
 
 @required_method('PUT')
 @csrf_protect
-def deactivate(request, combat_type_id) -> JsonResponse:
+def activate(request, combat_type_id) -> JsonResponse:
     combat_type = CombatType.objects.get(pk=combat_type_id)
-    combat_type.is_activate = False
+    combat_type.is_activate = not combat_type.is_activate
     combat_type.save()
 
-    return api_response(HttpCode.SUCCESS, 'success', 'CombatType successfully deactivated.')
+    return api_response(HttpCode.SUCCESS, 'success', 'CombatType successfully activated.' if combat_type.is_activate else 'CombatType successfully deactivated.')
 
 @required_method('DELETE')
 @csrf_protect

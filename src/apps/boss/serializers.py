@@ -5,7 +5,7 @@ def list_serializer(bosses):
         item = {
             'id': boss['id'],
             'label': boss['label'],
-            'isActivate': boss['is_activate']
+            'is_activate': boss['is_activate']
         }
 
         result.append(item)
@@ -16,5 +16,5 @@ def show_serializer(boss):
     return {
         'id': boss.id,
         'label': boss.label,
-        'isActivate': boss.is_activate
+        'is_activate': boss.is_activate
     }

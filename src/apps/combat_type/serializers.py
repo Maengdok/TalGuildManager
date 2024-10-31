@@ -5,7 +5,7 @@ def list_serializer(combat_types):
         item = {
             'id': combat_type['id'],
             'label': combat_type['label'],
-            'isActivate': combat_type['is_activate']
+            'is_activate': combat_type['is_activate']
         }
 
         result.append(item)
@@ -16,5 +16,5 @@ def show_serializer(combat_type):
     return {
         'id': combat_type.id,
         'label': combat_type.label,
-        'isActivate': combat_type.is_activate
+        'is_activate': combat_type.is_activate
     }

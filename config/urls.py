@@ -19,10 +19,11 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('member/', include('src.apps.member.urls'), name="member_"),
-    path('grade/', include('src.apps.grade.urls'), name="grade_"),
-    path('weapon/', include('src.apps.weapon.urls'), name="weapon_"),
     path('boss/', include('src.apps.boss.urls'), name="boss_"),
     path('combat_type/', include('src.apps.combat_type.urls'), name="combat_type_"),
-    path('loot_type/', include('src.apps.loot_type.urls'), name="loot_type_")
+    path('grade/', include('src.apps.grade.urls'), name="grade_"),
+    path('loot_type/', include('src.apps.loot_type.urls'), name="loot_type_"),
+    path('member/', include('src.apps.member.urls'), name="member_"),
+    path('roadster/', include('src.apps.roadster.urls'), name="roadster_"),
+    path('weapon/', include('src.apps.weapon.urls'), name="weapon_"),
 ]

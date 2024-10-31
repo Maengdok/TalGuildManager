@@ -61,12 +61,12 @@ def update(request) -> JsonResponse:
 
 @required_method('PUT')
 @csrf_protect
-def deactivate(request, loot_type_id) -> JsonResponse:
+def activate(request, loot_type_id) -> JsonResponse:
     loot_type = LootType.objects.get(pk=loot_type_id)
-    loot_type.is_activate = False
+    loot_type.is_activate = not loot_type.is_activate
     loot_type.save()
 
-    return api_response(HttpCode.SUCCESS, 'success', 'LootType successfully deactivated.')
+    return api_response(HttpCode.SUCCESS, 'success', 'LootType successfully activated.' if loot_type.is_activate else 'LootType successfully deactivated.')
 
 @required_method('DELETE')
 @csrf_protect

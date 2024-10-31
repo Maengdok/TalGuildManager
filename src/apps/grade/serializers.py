@@ -5,7 +5,7 @@ def list_serializer(grades):
         item = {
             'id': grade['id'],
             'label': grade['label'],
-            'isActivate': grade['is_activate']
+            'is_activate': grade['is_activate']
         }
 
         result.append(item)
@@ -16,5 +16,5 @@ def show_serializer(grade):
     return {
         'id': grade.id,
         'label': grade.label,
-        'isActivate': grade.is_activate
+        'is_activate': grade.is_activate
     }

@@ -5,7 +5,7 @@ def list_serializer(weapons):
         item = {
             'id': weapon['id'],
             'label': weapon['label'],
-            'isActivate': weapon['is_activate']
+            'is_activate': weapon['is_activate']
         }
 
         result.append(item)
@@ -16,5 +16,5 @@ def show_serializer(weapon):
     return {
         'id': weapon.id,
         'label': weapon.label,
-        'isActivate': weapon.is_activate
+        'is_activate': weapon.is_activate
     }

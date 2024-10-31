@@ -61,12 +61,12 @@ def update(request) -> JsonResponse:
 
 @required_method('PUT')
 @csrf_protect
-def deactivate(request, grade_id) -> JsonResponse:
+def activate(request, grade_id) -> JsonResponse:
     grade = Grade.objects.get(pk=grade_id)
-    grade.is_activate = False
+    grade.is_activate = not grade.is_activate
     grade.save()
 
-    return api_response(HttpCode.SUCCESS, 'success', 'Grade successfully deactivated.')
+    return api_response(HttpCode.SUCCESS, 'success', 'Grade successfully activated.' if grade.is_activate else 'Grade successfully deactivated.')
 
 @required_method('DELETE')
 @csrf_protect

@@ -62,13 +62,13 @@ def update(request) -> JsonResponse:
 
 @required_method('PUT')
 @csrf_protect
-def deactivate(request, member_id) -> JsonResponse:
+def activate(request, member_id) -> JsonResponse:
     member = Member.objects.get(pk=member_id)
-    member.is_activate = False
-    member.removed_at = datetime.now(ZoneInfo("Europe/Paris"))
+    member.is_activate = not member.is_activate
+    member.removed_at = None if member.removed_at else datetime.now(ZoneInfo("Europe/Paris"))
     member.save()
 
-    return api_response(HttpCode.SUCCESS, 'success', 'Member successfully deactivated.')
+    return api_response(HttpCode.SUCCESS, 'success', 'Member successfully activated' if member.is_activate else 'Member successfully deactivated.')
 
 @required_method('DELETE')
 @csrf_protect

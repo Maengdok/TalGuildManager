@@ -61,12 +61,12 @@ def update(request) -> JsonResponse:
 
 @required_method('PUT')
 @csrf_protect
-def deactivate(request, boss_id) -> JsonResponse:
+def activate(request, boss_id) -> JsonResponse:
     boss = Boss.objects.get(pk=boss_id)
-    boss.is_activate = False
+    boss.is_activate = not boss.is_activate
     boss.save()
 
-    return api_response(HttpCode.SUCCESS, 'success', 'Boss successfully deactivated.')
+    return api_response(HttpCode.SUCCESS, 'success', 'Boss successfully activated.' if boss.is_activate else 'Boss successfully deactivated.')
 
 @required_method('DELETE')
 @csrf_protect

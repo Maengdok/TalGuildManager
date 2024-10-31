@@ -1,7 +1,6 @@
 def list_serializer(members):
     result = []
     
-    print('list_serializer')
     for member in members:
         item = {
             'id': member.id,
@@ -14,12 +13,12 @@ def list_serializer(members):
                 'id': member.weapon.id,
                 'label': member.weapon.label,
             },
-            'combatType': {
+            'combat_type': {
                 'id': member.combat_type.id,
                 'label': member.combat_type.label,
             },
-            'addedAt': member.added_at,
-            'isActivate': member.is_activate
+            'added_at': member.added_at,
+            'is_activate': member.is_activate
         }
 
         result.append(item)
@@ -38,14 +37,14 @@ def show_serializer(member):
                 'id': member.weapon.id,
                 'label': member.weapon.label,
         },
-        'combatType': {
+        'combat_type': {
                 'id': member.combat_type.id,
                 'label': member.combat_type.label,
         },
-        'addedAt': member.added_at.strftime('%Y-%m-%d') if member.added_at else "",
-        'removedAt': member.removed_at.strftime('%Y-%m-%d') if member.removed_at else "",
-        'isOnDiscord': member.is_on_discord,
-        'isActive': member.is_active,
-        'hasPrivilege': member.has_privilege,
-        'isActivate': member.is_activate,
+        'added_at': member.added_at.strftime('%Y-%m-%d') if member.added_at else "",
+        'removed_at': member.removed_at.strftime('%Y-%m-%d') if member.removed_at else "",
+        'is_on_discord': member.is_on_discord,
+        'is_active': member.is_active,
+        'has_privilege': member.has_privilege,
+        'is_activate': member.is_activate,
     }

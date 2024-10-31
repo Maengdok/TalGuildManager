@@ -5,7 +5,7 @@ def list_serializer(loot_types):
         item = {
             'id': loot_type['id'],
             'label': loot_type['label'],
-            'isActivate': loot_type['is_activate']
+            'is_activate': loot_type['is_activate']
         }
 
         result.append(item)
@@ -16,5 +16,5 @@ def show_serializer(loot_type):
     return {
         'id': loot_type.id,
         'label': loot_type.label,
-        'isActivate': loot_type.is_activate
+        'is_activate': loot_type.is_activate
     }
